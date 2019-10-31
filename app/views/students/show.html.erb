@@ -1,6 +1,8 @@
 Student: <%= @student.name %>
 
 <% @student.courses.each do |course| %>
-  <p>Course: <%= course.name %></p>
-  <p>Grade: <%= @student.grade(course) %></p>
+  <section id='course-<%=course.id%>''>
+    <p>Course: <%= course.name %></p>
+    <p>Grade: <%= @student.grade(course) %></p>
+  </section>
 <% end %>
