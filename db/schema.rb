@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,28 +12,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191031193006) do
-
+ActiveRecord::Schema.define(version: 20_191_031_193_006) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "course_students", force: :cascade do |t|
-    t.bigint "course_id"
-    t.bigint "student_id"
-    t.float "grade"
-    t.index ["course_id"], name: "index_course_students_on_course_id"
-    t.index ["student_id"], name: "index_course_students_on_student_id"
+  create_table 'course_students', force: :cascade do |t|
+    t.bigint 'course_id'
+    t.bigint 'student_id'
+    t.float 'grade'
+    t.index ['course_id'], name: 'index_course_students_on_course_id'
+    t.index ['student_id'], name: 'index_course_students_on_student_id'
   end
 
-  create_table "courses", force: :cascade do |t|
-    t.string "name"
+  create_table 'courses', force: :cascade do |t|
+    t.string 'name'
   end
 
-  create_table "students", force: :cascade do |t|
-    t.string "name"
-    t.float "grade"
+  create_table 'students', force: :cascade do |t|
+    t.string 'name'
   end
 
-  add_foreign_key "course_students", "courses"
-  add_foreign_key "course_students", "students"
+  add_foreign_key 'course_students', 'courses'
+  add_foreign_key 'course_students', 'students'
 end
