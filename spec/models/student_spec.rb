@@ -11,4 +11,16 @@ describe Student, type: :model do
     it { should have_many :course_students }
     it { should have_many(:courses).through(:course_students) }
   end
+
+  describe 'methods' do
+    it 'grade' do
+      christopher = Student.create(name: 'Christopher')
+
+      rails = Course.create(name: 'Rails')
+
+      CourseStudent.create(student: christopher, course: rails, grade: 3.6)
+
+      expect(christopher.grade(rails)).to eq(3.6)
+    end
+  end
 end
