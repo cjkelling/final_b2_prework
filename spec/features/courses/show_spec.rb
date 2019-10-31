@@ -11,9 +11,9 @@ describe 'As a user' do
       @bob = Student.create(name: 'Bob')
       @steve = Student.create(name: 'Steve')
 
-      @student_course = CourseStudent.create(student: @christopher, course: @rails, grade: 3.6)
-      @student_course2 = CourseStudent.create(student: @bob, course: @rails, grade: 2.9)
-      @student_course3 = CourseStudent.create(student: @steve, course: @rails, grade: 4.0)
+      CourseStudent.create(student: @christopher, course: @rails, grade: 3.6)
+      CourseStudent.create(student: @bob, course: @rails, grade: 2.9)
+      CourseStudent.create(student: @steve, course: @rails, grade: 4.0)
 
       visit course_path(@rails)
     end
